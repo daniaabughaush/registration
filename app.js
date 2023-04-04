@@ -43,8 +43,8 @@ const user=
       
       UserValidate(user.user)&&
       phoneValidate(user.phoneNumber)&&
-      emailValidate(user.email)
-      // PassWordValidate(user.passWord)
+      emailValidate(user.email)&&
+      PassWordValidate(user.passWord)
       ){
           infoArr.push(infoUser)
              let infoToString=JSON.stringify(infoArr)
@@ -61,15 +61,14 @@ const user=
          
          
         }
-        console.log(checkArr)
+        // console.log(checkArr)
         let findDuplicates = arr => arr.filter((item, index) => arr.indexOf(item) !== index)
 console.log(findDuplicates(checkArr));
-console.log(findDuplicates(checkArr).length!==0)
+// console.log(findDuplicates(checkArr).length!==0)
 if(findDuplicates(checkArr).length!==0){
   alert("user Already exist")
-  infoArr.pop();
-  
- 
+  infoArr.pop();//to stop repeating the alert and delete the duplicated item
+   
 }
    
  }
