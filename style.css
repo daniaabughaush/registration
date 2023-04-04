@@ -1,0 +1,169 @@
+html{
+    scroll-behavior: smooth;
+    }
+    h2{
+      font-family: cursive;
+    }
+     nav {
+      font-family: cursive;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgb(9 45 60);
+      color: white;
+      width: 100%;
+      border-radius: .3rem;
+       z-index: +1;
+      
+    }
+    
+    
+    .logo img{
+    
+        width: 4rem;
+    
+    }
+    
+    /* NAVBAR MENU */
+    
+    .menu {
+    
+        display: flex;
+    
+        gap: 1em;
+    
+        font-size: 1rem;
+       margin-right: 2rem;
+    }
+    
+    nav li:hover {
+    
+        background-color: #307c90;
+    
+        border-radius: .5rem;
+    
+        transition: .5s ease;
+    
+    }
+    
+    nav li {
+    
+        padding: .5rem .3rem;
+          list-style: none;
+        
+    }
+    .menu a{
+        color: white;
+        text-decoration: none;
+       
+    }
+    /* .all{
+      display: flex;
+      /* flex-direction: row; */
+      /* justify-content: space-around; */ 
+   
+    /* } */
+    main{
+      background-image: url("images/background.jpg");
+      background-size: cover;
+       min-height: 100%;
+      min-width: 100%;
+    }
+
+    form{
+      border :solid rgb(5, 129, 114); 
+      padding:4rem;
+      padding-bottom: 2rem;
+      margin-bottom: 2rem;
+      background-color: rgba(5, 99, 106, 0.5); 
+      max-width: 30rem;
+    }
+
+     input {
+      border :solid  #307C90;
+      border-radius: .7rem;
+     font-family: cursive;
+    }
+    label{
+      color:beige
+    }
+    h1{
+      text-align: center;
+      color: beige;
+    }
+    .footerlist li{
+        display: inline-block;
+        padding:2rem
+        
+        }
+        
+        footer{
+          text-align: center;
+        }
+        .footerlist img{
+            width: 2rem;
+        }
+        .footerlist p{
+            font-size: large;
+            font-weight: bold;
+        }
+        .footerlist img{
+          width:2rem;
+          height: 2rem;
+        }
+        .cardfooter{
+          /* border: #307C90; */
+          border-radius: 0 ;
+          background-color: #307C90;
+          color:white
+        }
+        /* ----------------------------------------------------------------------------------------------------------------------------------- */
+        .footerlist  img:hover{
+          background-color:  #67f3da;
+          box-shadow: .2rem .2rem white;
+        }
+        .submit{
+          padding: .5rem;
+          background-color: #307C90;
+          color: beige; 
+          border: #307C90;      
+        }
+  
+        #cardSt{
+          max-width: 15rem;
+          background-color: #307C90;
+          padding: 2rem;
+          margin: 1rem;
+          border: solid .4rem #65d5f5 ;
+          border-radius: 1rem;
+          font-family: cursive;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+       
+        }
+        
+        #cardSt li {
+          list-style: none;
+          color: beige;
+     
+          
+          
+        }
+        #cardSt img{
+          width: 10rem;
+        }
+        #cardSt ul{
+        padding: 0;
+        }
+  #studentInfo{
+    display:flex;
+    flex-wrap: wrap;
+  }
+       @media all and (max-width:800px){
+  /* .all{
+    flex-direction: column;
+  } */
+  
+       }
+  
