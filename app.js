@@ -1,4 +1,5 @@
 let infoArr=[];
+let checkArr=[];
 let UserValidate=function(string){
     let pattern=/\s/g;
     return !pattern.test(string)
@@ -17,6 +18,10 @@ let phoneValidate = function (number) {
     return pattern.test(number);
   };
 
+  if(sessionStorage.userInfo != null){
+    infoArr=JSON.parse(sessionStorage.userInfo);
+  }
+
 function User(user,passWord,phoneNumber,email){
 this.user=user;
 
@@ -33,31 +38,39 @@ const user=
      email:e.target.email.value
     }
  
-      if(
-        
-        UserValidate(user.user)&&
-        phoneValidate(user.phoneNumber)&&
-        emailValidate(user.email)&&
-        PassWordValidate(user.passWord)
-        ){
-          let infoUser=new User(user.user,user.passWord,user.phoneNumber,user.email)
-         infoArr.push(infoUser)
-            let infoToString=JSON.stringify(infoArr)
-          sessionStorage.setItem("userInfo",infoToString)
-          
-          console.log(infoArr)
+    let infoUser=new User(user.user,user.passWord,user.phoneNumber,user.email)
+    if(
       
-          
-          console.log(localStorage)
+      UserValidate(user.user)&&
+      phoneValidate(user.phoneNumber)&&
+      emailValidate(user.email)
+      // PassWordValidate(user.passWord)
+      ){
+          infoArr.push(infoUser)
+             let infoToString=JSON.stringify(infoArr)
+           sessionStorage.setItem("userInfo",infoToString)
+           console.log(infoArr)
+              checkArr=[];
+           for (let i = 0; i < infoArr.length; i++) {
+
+            const element = infoArr[i].user;
+            console.log(element)
+            checkArr.push(element)
+           }
+           
+         
          
         }
-        let checking = infoArr.map(function(item){ return item.name });
-let isDuplicate = checking.some(function(item, idx){ 
-    return checking.indexOf(item) != idx 
-});
-console.log(isDuplicate);
-if(isDuplicate){
+        console.log(checkArr)
+        let findDuplicates = arr => arr.filter((item, index) => arr.indexOf(item) !== index)
+console.log(findDuplicates(checkArr));
+console.log(findDuplicates(checkArr).length!==0)
+if(findDuplicates(checkArr).length!==0){
   alert("user Already exist")
+  infoArr.pop();
+  
+ 
 }
    
  }
+// sessionStorage.clear();
