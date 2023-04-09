@@ -1,5 +1,12 @@
 let infoArr=[];
 let checkArr=[];
+let userInput=document.getElementById('fname')
+let userPhone=document.getElementById('phoneNumber')
+let userpass=document.getElementById('pword')
+let userEmail=document.getElementById('email')
+let validation=document.getElementsByClassName("validRule" )
+console.log(validation)
+console.log(userInput)
 let UserValidate=function(string){
     let pattern=/\s/g;
     return !pattern.test(string)
@@ -60,6 +67,22 @@ const user=
            
          
          
+        }else
+        {
+          if(!UserValidate(user.user)||
+          !phoneValidate(user.phoneNumber)||
+          !emailValidate(user.email)||
+          !PassWordValidate(user.passWord)){
+            userInput.style.border=' solid red'
+            userEmail.style.border=' solid red'
+            userPhone.style.border=' solid red'
+            userpass.style.border=' solid red'
+            for (let i = 0; i < validation.length; i++) {
+         
+              validation[i].style.display=' block'
+              
+            }
+          }
         }
         // console.log(checkArr)
         let findDuplicates = arr => arr.filter((item, index) => arr.indexOf(item) !== index)

@@ -166,4 +166,9 @@ html{
   } */
   
        }
-  
+  p{
+    display:none;
+    color:red;
+    font-size:.8rem;
+    background-color: azure;
+  }
